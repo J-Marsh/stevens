@@ -48,13 +48,13 @@ large tip.
 
 We have included a number of quality checks, utilizing the `great_expectations` python
 package. First, we verify that our target column and the company column are not null.
-We also verify that the average speed and pickup hour are within a reasonable range,
-0-120mph and 0-23 respectively,  to ensure there are not any data entry errors. We also
-verify that the unique keys are in fact unique, and that the train-test split was
-appropriately assigned by verifying all values are either train or test. We then also
-verify that the average of our high tip indicator is between .01 and .5, as a higher
-average would indicate a need to revisit our assumption that 20% is a "high tip", and
-finally validate that the trip miles are always strictly greater than 0 to double check
+We also verify that pickup hour is within a reasonable range, 0-23, to ensure there are
+not any data entry errors. We also verify that the unique keys are in fact unique,
+that the train-test split was appropriately assigned by verifying all values are either
+train or test, and that our is_weekend feature is truly binary. We then also
+verify that the average of our high tip indicator is between .5 and .85, as the true
+average is close to 78%, which indicates our 20% cutoff for "high tip" is too low. Finally, we
+validate that the trip miles are always strictly greater than 0 to double check
 our silver layer example.
 
 Obviously, in a real example, we'd like to verify even more, but for the sake of brevity
